@@ -28,7 +28,7 @@ namespace _03_Simon_Says
                 {
                     result += v + " ";
                 }
-            return result;
+            return result.Trim();
         }
 
         internal string StartOfWord(string v1, int v2)
@@ -40,10 +40,51 @@ namespace _03_Simon_Says
         {
             char empty = ' ';
             int position = something.IndexOf(empty);
-            return something.Substring(0, position-1);
+            return something.Substring(0, position);
         }
 
-        internal string 
+        internal string Titleize(string something)
+        {   
+            string[] anarray = something.Split(' ');
+            string astring = "";
+            int i;
+            //if (anarray[0] == "the")
+            //{
+            //    anarray[0] = "The";
+            //    astring += anarray[0] + " ";
+            //    i = 1;
+            //}
+            //else
+            //{
+                i = 0;
+                for (int y = i; y <anarray.Length; y++)
+                {
+
+                    if (anarray[i].Substring(0, 1) != anarray[i].Substring(0, 1).ToUpper())
+                    {
+                        if (anarray[i] != "and" || anarray[i] != "over" || anarray[i] != "the")
+                        {
+                            anarray[i].Replace(anarray[i].Substring(0, 1), anarray[i].Substring(0, 1).ToUpper());
+                            astring += anarray[i] + " ";
+                        }
+                        else
+                        {
+                            astring += anarray[i] + " ";
+
+                        }
+                    }
+
+
+                }
+            //}
+
+            
+            return astring.Trim();
+
+
+
+
+        }
 
 
     }
