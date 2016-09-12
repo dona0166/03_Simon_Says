@@ -48,37 +48,38 @@ namespace _03_Simon_Says
             string[] anarray = something.Split(' ');
             string astring = "";
             int i;
-            //if (anarray[0] == "the")
-            //{
-            //    anarray[0] = "The";
-            //    astring += anarray[0] + " ";
-            //    i = 1;
-            //}
-            //else
-            //{
+            if (anarray[0] == "the")
+            {
+                anarray[0] = "The";
+                astring += anarray[0] + " ";
+                i = 1;
+            }
+            else
+            {
                 i = 0;
-                for (int y = i; y <anarray.Length; y++)
+            }
+                for (int y = i; y < anarray.Length; y++)
                 {
 
-                    if (anarray[i].Substring(0, 1) != anarray[i].Substring(0, 1).ToUpper())
-                    {
-                        if (anarray[i] != "and" || anarray[i] != "over" || anarray[i] != "the")
+                        if (anarray[y] != "and" && anarray[y] != "over" && anarray[y] != "the")
                         {
-                            anarray[i].Replace(anarray[i].Substring(0, 1), anarray[i].Substring(0, 1).ToUpper());
-                            astring += anarray[i] + " ";
+
+
+                            anarray[y] = anarray[y].Substring(0, 1).ToUpper() + anarray[y].Substring(1);
+                            astring += anarray[y] + " ";
                         }
                         else
                         {
-                            astring += anarray[i] + " ";
+                            astring += anarray[y] + " ";
 
-                        }
-                    }
-
-
+                   
                 }
-            //}
 
-            
+
+                
+            }
+
+
             return astring.Trim();
 
 
